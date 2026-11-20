@@ -1,5 +1,6 @@
 ---
 import type { Game } from "~/data/game";
+import { withBase } from "~/utils/url";
 
 interface Props {
   game: Game;
@@ -20,7 +21,7 @@ const scoreText = typeof game.score === "number" ? game.score.toFixed(1) : null;
   <!-- Icon -->
   <div class="relative aspect-square w-full overflow-hidden rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-2)]">
     <img
-      src={game.iconPath}
+      src={withBase(game.iconPath)}
       alt={`${game.title} icon`}
       loading="lazy"
       decoding="async"

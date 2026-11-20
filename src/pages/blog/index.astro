@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "~/utils/url";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
@@ -37,7 +38,7 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
           {posts.map((post) => (
             <li>
               <a
-                href={`/blog/${post.id}`}
+                href={withBase(`/blog/${post.id}`)}
                 class="group flex flex-col gap-2 py-6 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
               >
                 <div>

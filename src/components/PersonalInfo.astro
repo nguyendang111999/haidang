@@ -3,6 +3,7 @@ import Icon from "~/components/Icon.astro";
 import { profile } from "~/data/profile";
 import { contact } from "~/data/contact";
 import type { Game } from "~/data/game";
+import { withBase } from "~/utils/url";
 import gamesData from "~/data/games.generated.json";
 
 const games = gamesData as Game[];
@@ -85,7 +86,7 @@ const initials = profile.name
     <div class="flex flex-col items-start gap-4">
       {profile.avatar ? (
         <img
-          src={profile.avatar}
+          src={withBase(profile.avatar)}
           alt={`Profile photo of ${profile.name}`}
           width={160}
           height={160}
