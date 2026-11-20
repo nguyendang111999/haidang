@@ -20,7 +20,7 @@ Flow Free gives you a grid with pairs of colored dots. You connect each pair wit
 
 Paths can't cross or branch. That "fill the whole board" rule is what makes it a puzzle instead of a maze — it forces the paths to weave around each other.
 
-![A solved 5x5 Flow Free board](/blog/flow-free-5x5.png)
+![A solved 5x5 Flow Free board](/haidang-website/blog/flow-free-5x5.png)
 
 ## The project structure
 
@@ -232,7 +232,7 @@ Solving is a blocking native call, so I run the whole loop on a background threa
 - **A per-solve timeout** (`p.Add("timeout", ms)`) means `Check()` always returns, so a "Stop" flag checked between attempts takes effect quickly.
 - **Only the main thread touches Unity.** The worker pushes finished grids into a `ConcurrentQueue`; the Editor's update loop dequeues them, writes the files, and calls `AssetDatabase.Refresh()` at the end.
 
-![The map generator EditorWindow](/blog/flow-free-generator-window.png)
+![The map generator EditorWindow](/haidang-website/blog/flow-free-generator-window.png)
 
 Each run drops its levels into a timestamped folder like `Resources/Maps/Generated/20260809_142530/` with a small manifest recording the exact config — so I always know which settings produced which batch.
 
