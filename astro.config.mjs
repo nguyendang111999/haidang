@@ -3,10 +3,10 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// Served as a GitHub Pages project site: https://nguyendang111999.github.io/haidang-website/
+// Served as a GitHub Pages project site: https://nguyendang111999.github.io/haidang/
 // To move to a custom domain later, set `site` to it and `base` to '/'.
 const SITE = 'https://nguyendang111999.github.io';
-const BASE = '/haidang-website';
+const BASE = '/haidang';
 
 export default defineConfig({
   site: SITE,
